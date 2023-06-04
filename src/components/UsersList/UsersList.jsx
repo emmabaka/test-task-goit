@@ -7,7 +7,7 @@ import {
   getAllSortedUsers,
 } from "../../api/usersApi";
 import { ThreeDots } from "react-loader-spinner";
-import { VscTriangleLeft } from 'react-icons/vsc';
+import { VscTriangleLeft } from "react-icons/vsc";
 import UserCard from "../UserCard/UserCard";
 import css from "./UsersList.module.css";
 
@@ -36,6 +36,7 @@ const UsersList = () => {
             setVisibleUsers((prev) => [...prev, ...res]);
           }
         })
+        .catch((e) => console.log(e))
         .finally(() => setLoad(false));
     } else if (selectedTweets === "followings") {
       getAllSortedUsers(true).then((res) => setLastPage(res.length / 6));
@@ -47,6 +48,7 @@ const UsersList = () => {
             setVisibleUsers((prev) => [...prev, ...res]);
           }
         })
+        .catch((e) => console.log(e))
         .finally(() => setLoad(false));
     } else {
       getAllUsers().then((res) => setLastPage(res.length / 6));
@@ -58,6 +60,7 @@ const UsersList = () => {
             setVisibleUsers((prev) => [...prev, ...res]);
           }
         })
+        .catch((e) => console.log(e))
         .finally(() => setLoad(false));
     }
   }, [page, selectedTweets]);
@@ -75,7 +78,11 @@ const UsersList = () => {
     <section className={css.tweets}>
       <div className="container">
         <div className={css.wrapper}>
-          <Link className={css.backButton} to="/" > <VscTriangleLeft />Back</Link>
+          <Link className={css.backButton} to="/">
+            {" "}
+            <VscTriangleLeft />
+            Back
+          </Link>
           <select
             name="tweets"
             id="tweets-select"

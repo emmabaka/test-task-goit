@@ -9,12 +9,14 @@ import css from "./UserCard.module.css";
 const UserCard = ({
   user: { id, avatar, user, tweets, followers, follow },
 }) => {
+    
   const [isFollow, setFollow] = useState(follow);
 
   const handleFollow = () => {
     updateFollowUser(id);
     setFollow(true);
   };
+
   const handleUnfollow = () => {
     updateUnfollowUser(id);
     setFollow(false);
