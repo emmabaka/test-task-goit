@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { updateFollowUser, updateUnfollowUser } from "../../api/usersApi";
 import { formatNumber } from "../../helpers/formatNumber";
 import image from "../../assets/logo-goit.png";
+import defaultAvatar from "../../assets/avatar.png";
 import css from "./UserCard.module.css";
 
 const UserCard = ({
@@ -22,7 +23,11 @@ const UserCard = ({
   return (
     <li className={css.cardContainer}>
       <div className={css.upperCard}>
-        <img className={css.logo} src={image} alt="logo" />
+        <img
+          className={css.logo}
+          src={image ? image : defaultAvatar}
+          alt="logo"
+        />
       </div>
       <div className={css.line}>
         <div className={css.imageBorder}>
