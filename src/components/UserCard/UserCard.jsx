@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import { updateFollowUser, updateUnfollowUser } from "../../api/usersApi";
 import { formatNumber } from "../../helpers/formatNumber";
 import image from "../../assets/logo-goit.png";
@@ -58,6 +59,17 @@ const UserCard = ({
       </div>
     </li>
   );
+};
+
+UserCard.propTypes = {
+  user: PropTypes.exact({
+    id: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    user: PropTypes.string.isRequired,
+    tweets: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired,
+    follow: PropTypes.bool.isRequired,
+  }),
 };
 
 export default UserCard;
