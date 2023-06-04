@@ -1,5 +1,7 @@
+import TopUsers from "../../components/TopUsers/TopUsers";
+
 const Home = () => {
-  return;
+  return <TopUsers />;
 };
 
 export default Home;

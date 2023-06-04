@@ -1,0 +1,25 @@
+.topUsers {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.title {
+  font-size: 21px;
+  font-weight: 700;
+  color: #646cff;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+}
+.threeDots {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.usersList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 40px;
+}
